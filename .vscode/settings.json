@@ -1,0 +1,38 @@
+{
+    "editor.formatOnSave": true,
+    "[prisma]": {
+        "editor.defaultFormatter": "Prisma.prisma"
+    },
+    // Formatting using Prettier by default for all languages
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "always"
+    },
+    // Formatting using Prettier for JavaScript, overrides VSCode default.
+    "[javascript]": {
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.tabSize": 4,
+    // Linting using ESLint.
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    // Enable file nesting.
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.ts": "$(capture).test.ts, $(capture).test.tsx",
+        "*.tsx": "$(capture).test.ts, $(capture).test.tsx"
+    }
+}

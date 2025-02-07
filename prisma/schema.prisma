@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Navigation {
+  id          Int      @id @default(autoincrement())
+  title       String // 导航项标题
+  icon        String? // 导航项标题
+  url         String? // 点击导航项后跳转的链接（可选）
+  order       Int // 排序字段，用于确定同一级下的显示顺序
+  parentId    Int?
+  description String? // 可选描述信息
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("t_navigation")
+}
